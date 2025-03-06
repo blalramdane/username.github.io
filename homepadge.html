@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة الافضل لنقل الاثاث</title>
+  
+  <!-- استيراد خط Tajawal من Google Fonts لخط عربي احترافي -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* إعادة تهيئة أساسية */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      padding-bottom: 60px; /* مساحة للتذييل */
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* الشريط العلوي (Navbar) */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .navbar .brand {
+      margin: 0 auto;
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #0056b3;
+      text-align: center;
+    }
+    /* زر الاتصال */
+    .call-now-btn {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      background: #28a745;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-size: 1em;
+    }
+    .call-now-btn:hover {
+      background: #218838;
+    }
+    /* أيقونة WhatsApp */
+    .whatsapp-btn {
+      position: absolute;
+      right: 130px; /* تعديل المسافة حسب التصميم */
+      top: 10px;
+      width: 40px;
+      height: 40px;
+    }
+    .whatsapp-btn img {
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* قسم البطولي (Hero Section) */
+    .hero {
+      background: url("images/hero-bg.jpg") center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .hero h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #f8f9fa;
+    }
+    .hero-btn {
+      background: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .hero-btn:hover {
+      background: #218838;
+    }
+    /* خصم 5% */
+    .discount-badge {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      background: #ffc107;
+      color: #333;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      z-index: 2;
+      font-weight: 700;
+    }
+    /* قسم المحتوى */
+    .content {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .content p {
+      margin-bottom: 1em;
+      text-align: justify;
+    }
+    .content .highlight {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #d9534f;
+      margin: 10px 0;
+    }
+    /* قسم الصور في الأسفل */
+    .images-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .image-item {
+      background: #fafafa;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px;
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .image-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .image-item img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .image-item p {
+      font-size: 0.95em;
+      margin-bottom: 0.5em;
+      color: #555;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    @media (max-width: 600px) {
+      .hero {
+        height: 50vh;
+      }
+      .hero h1 {
+        font-size: 1.6em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      .navbar .call-now-btn {
+        top: 5px;
+      }
+      .whatsapp-btn {
+        right: 90px;
+        top: 5px;
+      }
+      .image-item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- الشريط العلوي (Navbar) -->
+  <nav class="navbar">
+    <div class="brand">شركه الافضل نقل الاثاث</div>
+    <!-- أيقونة واتساب -->
+    <a class="whatsapp-btn" href="https://wa.me/966531320148" target="_blank">
+      <img src="images/whatsapp-icon.png" alt="واتساب">
+    </a>
+    <!-- زر اتصل الآن -->
+    <a class="call-now-btn" href="tel:+966531320148">اتصل الآن</a>
+  </nav>
+
+  <!-- قسم البطولي (Hero Section) -->
+  <section class="hero">
+    <div class="discount-badge">خصم 5% اليوم</div>
+    <div class="hero-content">
+      <h1>أفضل شركة نقل الأثاث بالمملكة</h1>
+      <p>نقدم خدمات احترافية لنقل الأثاث بكل أمان وراحة. فقط اتصل بنا الآن!</p>
+      <a class="hero-btn" href="tel:+966531320148">اتصل الآن</a>
+    </div>
+  </section>
+
+  <!-- قسم المحتوى -->
+  <div class="content">
+    <p># عاوز تنقل اثاث بيتك بس خايف عليه من البهدلة؟ 🤷‍♀️</p>
+    <p>😵‍💫 إرتاح وسلمنا المفتاح 😎💪</p>
+    <p>خايف كمان انه يتكسر؟ 😖 إرتاح وسلمنا المفتاح 😎💪</p>
+    <p>وكمان في #% على كل الخدمات</p>
+    <p>⭕ طبعاً كلنا عندنا حاجات غالية في اثاث بيتنا، وخصوصاً الصيني وحاجات النيش، علشان كده رفعنا شعار:</p>
+    <p class="highlight">إرتاح وسلمنا المفتاح 😎💪</p>
+    <p>بنكون حريصين على حاجات العملاء لإننا عارفين إن حاجتكم غالية عليكم 😎</p>
+    <p>وبنضمن لكل عملائنا إننا هنحافظ على اثاث بيتكم وكل حاجة، عشان عندنا عمالة مدربة لنقل الاثاث والحفاظ عليه 💪</p>
+    <p>كمان عندنا سيارات مغلقة � لنقل الاثاث والحفاظ عليه من أي حاجة سواءً 🌧 مطر الشتاء أو 🌞 حرارة الصيف</p>
+    <p>وعندنا نجارين لفك وتركيب الغرف والشركات والعيادات 👨‍🔧</p>
+    <p>وكمان فنيين لفك المكيفات 👨‍🔧</p>
+    <p>والأهم هو تغليف الصيني وتعبئته في كراتين مخصصة للحفاظ عليه 🍸🍽</p>
+    <p>وكمان تغليف الغرف للحفاظ عليها 📦</p>
+    <p>متشلش هم نقل الاثاث 🦹‍♀️🤷‍♂️</p>
+    <p>20 سنة في خدمتكم خلتنا نمبر وان ☝️</p>
+    <p>شركة الافضل لنقل الاثاث 🏗 🚛🦺</p>
+    <p>1️⃣ إدارة وإشراف بجودة عالية 👨‍🔬👨‍💻</p>
+    <p>2️⃣ عمالة مدربة 🦺🦺</p>
+    <p>3️⃣ سيارات مجهزة 🚛🚚</p>
+    <p>يبقى أكيد هتنقل عفشك من غير ولا خدش أو كسر 🤦‍♂️🤷‍♀️</p>
+    <p>انقل عفشك بأمان مع شركة الافضل</p>
+    <p>يلا اتصل، مستني إيه؟ احجز معانا وخليك في الأمان!</p>
+
+    <!-- قسم الصور في الأسفل جنباً إلى جنب -->
+    <div class="images-section">
+      <div class="image-item">
+        <img src="images/photo2.jpg" alt="صورة أسفل 1">
+        <p>فريقنا المدرب في خدمتك</p>
+        <p>نحن نضمن لك نقلًا آمنًا وسريعًا مع فريق محترف.</p>
+      </div>
+      <div class="image-item">
+        <img src="images/photo1.jpg" alt="صورة أسفل 2">
+        <p>سيارات مجهزة لنقل الأثاث</p>
+        <p>سياراتنا مغلقة ومجهزة لحماية أثاثك من العوامل الخارجية.</p>
+      </div>
+      <div class="image-item">
+        <img src="images/photo11.jpg" alt="صورة أسفل 3">
+        <p>عناية فائقة بالأغراض الثمينة</p>
+        <p>نقدم خدمات تغليف خاصة للأغراض الثمينة مثل الصيني والزجاج.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- التذييل -->
+  <footer class="footer">
+    &copy; شركه الافضل نقل الاثاث لسنا الوحيدون ولكننا متميزون .
+  </footer>
+</body>
+</html>
